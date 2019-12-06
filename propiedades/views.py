@@ -32,7 +32,7 @@ def nuevodepa(request):
 
         if form.is_valid():
             form.save()
-            return redirect('propiedades:inmobiliaria')
+            return redirect('propiedades:depa')
     else:
         form = FormDepa()
         return render(request, 'propiedad/nuevo_depa.html', {'form': form})
