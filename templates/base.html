@@ -11,11 +11,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Propiedades</title>
+  <title>Inmobiliaria SAC</title>
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/nunito/stylesheet.css' %}">
 
   <!-- Custom styles for this template-->
   <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
@@ -36,7 +36,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Inmobiliaria <sup>sac</sup></div>
       </a>
 
       <!-- Divider -->
@@ -46,6 +46,17 @@
       <div class="sidebar-heading">
         Propiedades
       </div>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'propiedades:inmobiliaria' %}">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Casas</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'propiedades:depa' %}">
+          <i class="fas fa-fw fa-building"></i>
+          <span>Departamentos</span></a>
+      </li> 
+
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
@@ -56,8 +67,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 
-            <a class="collapse-item" href="buttons.html">Registrar</a>
-            
+            <a class="collapse-item" href="{% url 'propiedades:nuevacasa' %}">Registrar casa</a>
+            <a class="collapse-item" href="{% url 'propiedades:nuevodepa' %}">Registrar departamento</a>
           </div>
         </div>
       </li>
@@ -81,8 +92,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <h1 class="h3 mb-0 text-gray-800 mt-3">Inmobiliaria SAC</h1>
+            
           </div>
 
           <!-- Content Row -->
@@ -97,14 +108,7 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
+ 
       <!-- End of Footer -->
 
     </div>

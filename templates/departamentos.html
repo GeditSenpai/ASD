@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 	{% block content %}
-		
-<div class="card shadow mb-4">
+	<div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Lista de Casas Registradas</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Lista de Departamentos Registradas</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -15,29 +14,27 @@
                         <th>Largo</th>
                         <th>Precio</th>
                         <th>Habitaciones</th>
-                        <th>Jardin</th>
+                        <th>Piso</th>
                         <th>Disponibilidad</th>
+                    
                         <th>configuracion</th>
-                     
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in items_casas %}
+                    {% for item in items_departamentos %}
                     <tr>
                         <td>{{ item.codigo }}</td>
                         <td>{{ item.ancho }}</td>
                         <td>{{ item.largo }}</td>
                         <td>{{ item.precio }}</td>
                         <td>{{ item.habitaciones }}</td>
-                        <td>{{ item.jardin }}</td>
+                        <td>{{ item.piso }}</td>
                         <td>{{ item.disponibilidad }}</td>
                        <td><div class="row">
-                            <div class="btn-configuracion col-md-6"><a href="{% url 'propiedades:editarcasa' item.codigo %}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Editar</a></div>
-
-                            <div class="col-md-6"><a href="{% url 'propiedades:eliminarcasa' item.codigo %}" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm">Eliminar</a></div>
-                        </div></td>
+                       		<div class="btn-configuracion col-md-6"><a href="{% url 'propiedades:editardepa' item.codigo %}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Editar</a></div>
+                       		<div class="col-md-6"><a href="{% url 'propiedades:eliminardepa' item.codigo %}" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm">Eliminar</a></div>
+                       	</div></td>
                         
-
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -45,4 +42,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
+	{% endblock %}
