@@ -1,4 +1,38 @@
 {% extends 'base.html' %}
 	{% block content %}
-		XDXDXDX
+		
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Inventario de productos</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Marca</th>
+                        <th>Tipo mascota</th>
+                        <th>Precio</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items_prod %}
+                    <tr>
+                        <td>{{ item.pk }}</td>
+                        <td>{{ item.prod_nomb }}</td>
+                        <td>{{ item.cat_prod }}</td>
+                        <td>{{ item.marca_nomb|default_if_none:"Generico" }}</td>
+                        <td>{{ item.tip_mascota }}</td>
+                        <td>{{ item.precio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 	{% endblock %}
